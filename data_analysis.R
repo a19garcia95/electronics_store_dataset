@@ -20,4 +20,61 @@ refine_df$company[22:25] <- "Unilever"
 #   }
 # }
 
+refine_df[c("product_code", "product_number")] <- NA
+
+#Need help on doing this with a for loop
+
+refine_df$product_code[1] <- sub("-5", "", refine_df$Product.code...number[1])
+refine_df$product_code[2] <- sub("-43", "", refine_df$Product.code...number[2])
+refine_df$product_code[3] <- sub("-3", "", refine_df$Product.code...number[3])
+refine_df$product_code[4] <- sub("-34", "", refine_df$Product.code...number[4])
+refine_df$product_code[5] <- sub("-12", "", refine_df$Product.code...number[5])
+refine_df$product_code[6] <- sub("-23", "", refine_df$Product.code...number[6])
+refine_df$product_code[7] <- sub("-43", "", refine_df$Product.code...number[7])
+refine_df$product_code[8] <- sub("-12", "", refine_df$Product.code...number[8])
+refine_df$product_code[9] <- sub("-5", "", refine_df$Product.code...number[9])
+refine_df$product_code[10] <- sub("-34", "", refine_df$Product.code...number[10])
+refine_df$product_code[11] <- sub("-5", "", refine_df$Product.code...number[11])
+refine_df$product_code[12] <- sub("-9", "", refine_df$Product.code...number[12])
+refine_df$product_code[13] <- sub("-8", "", refine_df$Product.code...number[13])
+refine_df$product_code[14] <- sub("-56", "", refine_df$Product.code...number[14])
+refine_df$product_code[15] <- sub("-67", "", refine_df$Product.code...number[15])
+refine_df$product_code[16] <- sub("-21", "", refine_df$Product.code...number[16])
+refine_df$product_code[17] <- sub("-45", "", refine_df$Product.code...number[17])
+refine_df$product_code[18] <- sub("-56", "", refine_df$Product.code...number[18])
+refine_df$product_code[19] <- sub("-65", "", refine_df$Product.code...number[19])
+refine_df$product_code[20] <- sub("-21", "", refine_df$Product.code...number[20])
+refine_df$product_code[21] <- sub("-23", "", refine_df$Product.code...number[21])
+refine_df$product_code[22] <- sub("-3", "", refine_df$Product.code...number[22])
+refine_df$product_code[23] <- sub("-4", "", refine_df$Product.code...number[23])
+refine_df$product_code[24] <- sub("-6", "", refine_df$Product.code...number[24])
+refine_df$product_code[25] <- sub("-8", "", refine_df$Product.code...number[25])
+
+#This needs to be done with a for loop as well:
+
+refine_df$product_number[1] <- sub("p-", "", refine_df$Product.code...number[1])
+refine_df$product_number[2] <- sub("p-", "", refine_df$Product.code...number[2])
+refine_df$product_number[3] <- sub("x-", "", refine_df$Product.code...number[3])
+refine_df$product_number[4] <- sub("x-", "", refine_df$Product.code...number[4])
+refine_df$product_number[5] <- sub("x-", "", refine_df$Product.code...number[5])
+refine_df$product_number[6] <- sub("p-", "", refine_df$Product.code...number[6])
+refine_df$product_number[7] <- sub("v-", "", refine_df$Product.code...number[7])
+refine_df$product_number[8] <- sub("v-", "", refine_df$Product.code...number[8])
+refine_df$product_number[9] <- sub("x-", "", refine_df$Product.code...number[9])
+refine_df$product_number[10] <- sub("p-", "", refine_df$Product.code...number[10])
+refine_df$product_number[11] <- sub("q-", "", refine_df$Product.code...number[11])
+refine_df$product_number[12] <- sub("q-", "", refine_df$Product.code...number[12])
+refine_df$product_number[13] <- sub("x-", "", refine_df$Product.code...number[13])
+refine_df$product_number[14] <- sub("p-", "", refine_df$Product.code...number[14])
+refine_df$product_number[15] <- sub("v-", "", refine_df$Product.code...number[15])
+refine_df$product_number[16] <- sub("v-", "", refine_df$Product.code...number[16])
+refine_df$product_number[17] <- sub("x-", "", refine_df$Product.code...number[17])
+refine_df$product_number[18] <- sub("v-", "", refine_df$Product.code...number[18])
+refine_df$product_number[19] <- sub("v-", "", refine_df$Product.code...number[19])
+refine_df$product_number[20] <- sub("x-", "", refine_df$Product.code...number[20])
+refine_df$product_number[21] <- sub("p-", "", refine_df$Product.code...number[21])
+refine_df$product_number[22] <- sub("x-", "", refine_df$Product.code...number[22])
+refine_df$product_number[23] <- sub("q-", "", refine_df$Product.code...number[23])
+refine_df$product_number[24] <- sub("q-", "", refine_df$Product.code...number[24])
+refine_df$product_number[25] <- sub("q-", "", refine_df$Product.code...number[25])
 
