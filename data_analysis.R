@@ -1,5 +1,6 @@
 library(readxl)
 library(dplyr)
+library(sqldf)
 refine <- read_excel("~/Downloads/refine.xlsx")
 
 refine_df <- data.frame(refine)
@@ -78,36 +79,43 @@ refine_df$product_number[23] <- sub("q-", "", refine_df$Product.code...number[23
 refine_df$product_number[24] <- sub("q-", "", refine_df$Product.code...number[24])
 refine_df$product_number[25] <- sub("q-", "", refine_df$Product.code...number[25])
 
-refine_df["Product Category"] <- NA
+refine_df["product_category"] <- NA
 
-# for(product in refine_df$product_code) {
-#   if (product == "p") {
-#     refine_df$Smartphone <- "p", 
-#   }
-#   else if (product == "v") {
-#     refine_df$TV <- "v"
-#   }
-#   else if (product == "x") {
-#     refine_df$Laptop <- "x"
-#   }
-#   else if (product == "q") {
-#     refine_df$Tablet <- "q"
-#   }
-#   else
-#     print("hi")
-# }
+refine_df <- subset(refine_df, select = -c(Laptop, TV, Tablet ) )
+
+refine_df$product_category[which(refine_df$product_code == "p")] <- "Smartphone"
+refine_df$product_category[which(refine_df$product_code == "v")] <- "TV"
+refine_df$product_category[which(refine_df$product_code == "x")] <- "Laptop"
+refine_df$product_category[which(refine_df$product_code == "q")] <- "Tablet"
+
+mutate(refine_df, full_address = paste(address, city, country, sep = ","))
+
+refine_df[c("company_philips", "company_akzo", "company_van_houten", "company_unilever", "product_smartphone", "product_tv", "product_laptop", "product_tablet")] <- NA
 
 
+refine_df$company_philips[which(refine_df$company == "Phillips")] <- 1
+refine_df$company_philips[which(refine_df$company != "Phillips")] <- 0
 
+refine_df$company_akzo[which(refine_df$company == "Akzo")] <- 1
+refine_df$company_akzo[which(refine_df$company != "Akzo")] <- 0
 
+refine_df$company_van_houten[which(refine_df$company == "Van Houten")] <- 1
+refine_df$company_van_houten[which(refine_df$company != "Van Houten")] <- 0
 
+refine_df$company_unilever[which(refine_df$company == "Unilever")] <- 1
+refine_df$company_unilever[which(refine_df$company != "Unilever")] <- 0
 
+refine_df$product_smartphone[which(refine_df$product_category == "Smartphone")] <- 1
+refine_df$product_smartphone[which(refine_df$product_category != "Smartphone")] <- 0 
 
+refine_df$product_tv[which(refine_df$product_category == "TV")] <- 1
+refine_df$product_tv[which(refine_df$product_category != "TV")] <- 0
 
+refine_df$product_laptop[which(refine_df$product_category == "Laptop")] <- 1
+refine_df$product_laptop[which(refine_df$product_category != "Laptop")] <- 0
 
-
-
-
+refine_df$product_tablet[which(refine_df$product_category == "Tablet")] <- 1
+refine_df$product_tablet[which(refine_df$product_category != "Tablet")] <- 0
 
 
 
