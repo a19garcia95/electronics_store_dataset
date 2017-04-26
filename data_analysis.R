@@ -78,3 +78,37 @@ refine_df$product_number[23] <- sub("q-", "", refine_df$Product.code...number[23
 refine_df$product_number[24] <- sub("q-", "", refine_df$Product.code...number[24])
 refine_df$product_number[25] <- sub("q-", "", refine_df$Product.code...number[25])
 
+refine_df["Product Category"] <- NA
+
+# for(product in refine_df$product_code) {
+#   if (product == "p") {
+#     refine_df$Smartphone <- "p", 
+#   }
+#   else if (product == "v") {
+#     refine_df$TV <- "v"
+#   }
+#   else if (product == "x") {
+#     refine_df$Laptop <- "x"
+#   }
+#   else if (product == "q") {
+#     refine_df$Tablet <- "q"
+#   }
+#   else
+#     print("hi")
+# }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
